@@ -16,6 +16,7 @@ Interface simples e responsiva
 📂 **Estrutura do Projeto**
 
 📁 SnakeGame
+
  ├── index.html
  ├── style.css
  └── game.js
