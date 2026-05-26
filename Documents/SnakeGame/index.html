@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neon Snake — Cyberpunk Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Animated background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <div id="game-wrap">
+    <!-- TOP BAR -->
+    <div id="top-bar">
+      <div id="title-area">
+        <span class="title-hex">⬡</span>
+        <span class="title-text">NEON<span class="title-accent">SNAKE</span></span>
+      </div>
+      <button id="sound-btn" title="Mute/Unmute">🔊</button>
+    </div>
+
+    <div id="hud">
+      <div class="hud-box" id="hud-score">
+        <div class="hud-label">Score</div>
+        <div class="hud-value" id="score">0</div>
+      </div>
+      <div class="hud-box" id="hud-level">
+        <div class="hud-label">Level</div>
+        <div class="hud-value" id="level">1</div>
+      </div>
+      <div class="hud-box" id="hud-best">
+        <div class="hud-label">Best</div>
+        <div class="hud-value" id="best">0</div>
+      </div>
+      <div class="hud-box" id="hud-lives">
+        <div class="hud-label">Vidas</div>
+        <div class="hud-value lives-val" id="lives">❤❤❤</div>
+      </div>
+      <div class="hud-box" id="combo-box" style="display:none">
+        <div class="hud-label">Combo</div>
+        <div class="hud-value combo-val" id="combo">x1</div>
+      </div>
+    </div>
+
+    <div id="powerup-bar">
+      <span id="powerup-label"></span>
+      <div id="powerup-timer-wrap" style="display:none">
+        <div id="powerup-timer-bar"></div>
+      </div>
+    </div>
+
+    <div id="canvas-wrap">
+      <canvas id="c" width="540" height="440"></canvas>
+      <div id="lvl-flash">LEVEL UP!</div>
+      <div id="shield-flash">🛡 ESCUDO!</div>
+      <div id="scanlines"></div>
+
+      <!-- MAIN OVERLAY -->
+      <div id="overlay">
+        <div class="overlay-logo">
+          <div class="logo-hex-ring">
+            <span class="logo-symbol">⬡</span>
+          </div>
+        </div>
+        <h2 id="overlay-title">NEON SNAKE</h2>
+        <div class="sub" id="overlay-sub">CYBERPUNK EDITION</div>
+        <div id="final-score" class="score-final" style="display:none"></div>
+        <button id="start-btn">▶ INICIAR JOGO</button>
+        <div id="tip">WASD / Setas · P = Pausar · ESC = Pausar</div>
+      </div>
+
+      <!-- HIGH SCORES PANEL -->
+      <div id="scores-panel" style="display:none">
+        <h2>🏆 HIGH SCORES</h2>
+        <ol id="scores-list"></ol>
+        <button id="scores-close-btn">← VOLTAR</button>
+      </div>
+    </div>
+
+    <!-- LEGEND -->
+    <div id="legend">
+      <div class="legend-item"><span class="dot dot-normal"></span>Normal +10</div>
+      <div class="legend-item"><span class="dot dot-bonus"></span>Bônus +50</div>
+      <div class="legend-item"><span class="dot dot-slow"></span>Lento ⏱</div>
+      <div class="legend-item"><span class="dot dot-double"></span>2× pts</div>
+      <div class="legend-item"><span class="dot dot-shield"></span>Escudo 🛡</div>
+    </div>
+
+    <div id="bottom-bar">
+      <button id="scores-btn">🏆 SCORES</button>
+      <div class="mobile-btns">
+        <div class="mob-row"><button class="mob-btn" id="mb-up">▲</button></div>
+        <div class="mob-row">
+          <button class="mob-btn" id="mb-left">◀</button>
+          <button class="mob-btn" id="mb-down">▼</button>
+          <button class="mob-btn" id="mb-right">▶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
